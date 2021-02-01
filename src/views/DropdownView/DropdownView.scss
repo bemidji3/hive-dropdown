@@ -1,0 +1,10 @@
+.DropdownViewContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 75%;
+  .SelectedItems {
+    display: flex;
+    flex-direction: column;
+  }
+}
