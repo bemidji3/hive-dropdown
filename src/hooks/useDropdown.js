@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const useDropdown = (data, setSelectedItems) => {
+const useDropdown = (data, setSelectedItems, value) => {
   const [dropdownOptions, setDropdownItems] = useState(data);
+  const [dropdownValue, setDropdownValue] = useState(value);
   const handleChange = (optionToUpdate) => {
     const newDropdownItems = dropdownOptions.map((option) => {
       if (option.value === optionToUpdate) {
@@ -34,12 +35,22 @@ const useDropdown = (data, setSelectedItems) => {
     setDropdownItems(updatedDropdownItems);
     setSelectedItems(updatedDropdownItems);
   };
+  const updateDropdownValueObject = (newData) => {
+    const updatedValueObject = newData.reduce((acc, currentValue) => {
+      let newObject = {};
+      newObject[currentValue.key] = currentValue;
+      return Object.assign(acc, newObject)
+    }, {});
+    setDropdownValue(updatedValueObject);
+  };
 
   return {
     dropdownOptions,
+    dropdownValue,
     handleChange,
     resetDropdown,
     selectAllOptions,
+    updateDropdownValueObject,
   };
 };
 

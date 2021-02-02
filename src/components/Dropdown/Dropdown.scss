@@ -6,7 +6,7 @@
     font-size: small;
     display: flex;
     align-self: flex-start;
-    margin: 5px;
+    margin: 5px 5px 5px 0;
     color: gray;
   }
 
@@ -18,16 +18,21 @@
     background-color: whitesmoke;
     border: 1px solid dimgray;
     border-radius: 3px;
-    margin-left: 5px;
 
     .PreviewItem {
       display: flex;
       align-self: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
+      align-items: center;
       width: 95%;
       font-weight: 600;
+
+      .ToggleIcon {
+        position: relative;
+        left: 10px;
+      }
 
       .PreviewItemText {
         display: flex;
@@ -40,6 +45,7 @@
 
       &.expanded {
         border-radius: 3px;
+        margin-bottom: 5px;
       }
     }
 
@@ -53,6 +59,7 @@
         overflow-x: hidden;
         padding: 5px;
         z-index: 500;
+        border-radius: 5px;
 
         .DropdownItem {
           display: flex;
