@@ -90,9 +90,6 @@ function Dropdown({ options, placeHolder = "Select item(s)", label }) {
   useOutsideClick(ref, () => {
     setIsOpen(false);
   });
-  useEffect(() => {
-    console.log("selected items: ", selectedItems);
-  }, [selectedItems]);
   return (
     <div className="LabelWrapper">
       {label && <label className="DropdownLabel">{label}</label>}
