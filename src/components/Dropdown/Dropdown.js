@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUp,
@@ -14,7 +14,6 @@ import useDropdown from "../../hooks/useDropdown";
 import "./Dropdown.scss";
 import { DUMMY_DROPDOWN_ITEMS } from "../../views/DropdownView/config";
 
-//TODO select all and deselect all
 
 function SelectedDropdownItem({ item, extraClassNames, onClick }) {
   const { text } = item;
@@ -141,8 +140,12 @@ function Dropdown({ options, placeHolder = "Select item(s)", label }) {
         </div>
       </div>
       <div className="FooterActions">
-        <button className="Reset" onClick={() => resetDropdown()}>Reset Selection</button>
-        <button className="SelectAll" onClick={() => selectAllOptions()}>Select All</button>
+        <button className="Reset" onClick={() => resetDropdown()}>
+          Reset Selection
+        </button>
+        <button className="SelectAll" onClick={() => selectAllOptions()}>
+          Select All
+        </button>
       </div>
     </div>
   );
