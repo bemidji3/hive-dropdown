@@ -1,0 +1,121 @@
+.LabelWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .DropdownLabel {
+    font-size: small;
+    display: flex;
+    align-self: flex-start;
+    margin: 5px;
+    color: gray;
+  }
+
+  .DropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 5px;
+    background-color: whitesmoke;
+    border: 1px solid dimgray;
+    border-radius: 3px;
+    margin-left: 5px;
+
+    .PreviewItem {
+      display: flex;
+      align-self: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 95%;
+      font-weight: 600;
+
+      .PreviewItemText {
+        display: flex;
+        min-width: 0;
+        flex-basis: 90%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &.expanded {
+        border-radius: 3px;
+      }
+    }
+
+    .DropdownContent {
+      background: white;
+      &.expanded {
+        display: flex;
+        max-height: 200px;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 5px;
+        z-index: 500;
+
+        .DropdownItem {
+          display: flex;
+          align-self: flex-start;
+          width: 100%;
+          padding: 5px;
+          .DropdownItemLabel {
+            padding-left: 5px;
+          }
+          &:hover {
+            background-color: lightgray;
+          }
+          &.checked {
+            background-color: lightgray;
+          }
+        }
+      }
+
+      .SelectedItemsView {
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: row wrap;
+        max-width: 100%;
+        background-color: whitesmoke;
+
+        .SelectedDropdownItem {
+          display: flex;
+          flex-direction: row;
+          border: 1px solid darkgray;
+          border-radius: 5px;
+          margin: 5px;
+          min-width: 75px;
+          background-color: white;
+          .CloseIcon {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  .FooterActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    padding: 10px;
+
+    .Reset, .SelectAll {
+      border-radius: 5px;
+      font-weight: 400;
+      margin: 5px;
+      font-family : inherit;
+      font-size: 1em;
+    }
+
+    .SelectAll {
+      background-color: deepskyblue;
+    }
+    .Reset {
+      background-color: orangered;
+    }
+
+  }
+}
