@@ -19,4 +19,4 @@ To edit the dropdown item data, navigate to `src/views/DropdownView/config.js` a
 # A COUPLE OF THINGS TO NOTE ABOUT THE IMPLEMENTATION
 
 (1) I messed around for a while trying to get the text to ellipsize when there is an overflow of selected items, but was unable to get it to work
-(2)
+(2) The dropdown also takes a value prop that can be bound as an object of objects that reflects the selected items from the dropdown
